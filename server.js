@@ -10,6 +10,10 @@ app.use(cors());
 
 dotenv.config();
 
+app.get("/", (req, res) => {
+  res.send("Hello, welcome to the todo app");
+});
+
 app.use("/todos", todoRouter);
 
 const CONNECTION_URL = `mongodb+srv://${process.env.USER_ID}:${process.env.USER_KEY}@cluster0.dea7np6.mongodb.net/?retryWrites=true&w=majority`;

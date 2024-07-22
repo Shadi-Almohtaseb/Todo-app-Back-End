@@ -38,3 +38,12 @@ export const completeTodo = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const getAllTodos = async (req, res) => {
+  try {
+    const todos = await todo.find();
+    res.status(200).json(todos);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
